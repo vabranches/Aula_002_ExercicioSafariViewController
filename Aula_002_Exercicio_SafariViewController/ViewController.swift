@@ -1,25 +1,33 @@
-//
-//  ViewController.swift
-//  Aula_002_Exercicio_SafariViewController
-//
-//  Created by Swift on 17/01/17.
-//  Copyright © 2017 Swift. All rights reserved.
-//
-
 import UIKit
+import SafariServices
+
 
 class ViewController: UIViewController {
+    
+    //MARK: Outlets
+    let urls : [String] = ["http://ios.quaddro.com.br","http://www.quaddro.com.br/cursos/","http://www.quaddro.com.br/avaliacaodiaria"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: Actions
+    
+    @IBAction func irHome(_ sender: UIButton) {
+        let meuSafari = SFSafariViewController(url: URL(string: urls[0])!)
+        present(meuSafari, animated: true)
     }
-
+    
+    @IBAction func irCursos(_ sender: UIButton) {
+        let meuSafari = SFSafariViewController(url: URL(string: urls[1])!)
+        present(meuSafari, animated: true)
+    }
+    
+    @IBAction func irAvaliacao(_ sender: UIButton) {
+        let meuSafari = SFSafariViewController(url: URL(string: urls[2])!)
+        present(meuSafari, animated: true)
+    }
 
 }
 
